@@ -3,7 +3,7 @@ youLose = ("The computer wins")
 win = ("You win")
 lives = 5
 score = 0
-draw = 0
+tieGame = 0
 computer_lives = 7
 
 while True: 
@@ -30,3 +30,78 @@ while True:
       print("Can you beat the computer?")
       print("Good Luck!")
       print("------------------------------------------------------")
+      while True:
+        rps = input("Rock, Paper, Scissors?")
+        import random
+        computer = ("rock", "paper", "scissors")
+        computer = random.choice(computer)
+        #rock if statements
+        if rps == "rock" and computer == "paper":
+          print("The computer chose", computer)
+          print("")
+          print(youLose)
+          print("")
+          print("")
+          lives-=1 
+        if rps == "rock" and computer == "scissors":
+          print("The computer chose", computer)
+          print("")
+          print(win)
+          print("")
+          print("")
+          score+=1
+        #paper if statements
+        if rps == "paper" and computer == "rock":
+          print("The computer chose", computer)
+          print("")
+          print(win)
+          computer_lives -= 1
+          print("")
+          print("")
+          score+=1
+        if rps == "paper" and computer == "scissors":
+          print("The computer chose", computer)
+          print("")
+          print(youLose)
+          print("")
+          print("")
+          lives-=1
+        #scissors if statements
+        if rps == "scissors" and computer == "paper":
+          print("The computer chose", computer)
+          print("")
+          print(win)
+          computer_lives-=1
+          print("")
+          print("")
+          score+=1 
+        if rps == "scissors" and computer == "rock":
+          print("The computer chose", computer)
+          print("")
+          print(youLose)
+          print("")
+          print("")
+          lives-=1
+        #duplicates
+        if rps == "rock" and computer == "rock":
+          print("The computer chose", computer)
+          print("")
+          print("It's a draw!")
+          print("")
+          print("")
+          tieGame+=1
+        if rps == "paper" and computer == "paper":
+          print("The computer chose", computer)
+          print("")
+          print("It's a draw!")
+          print("")
+          print("")
+          tieGame+=1
+        if rps == "scissors" and computer == "scissors"
+          print("The computer chose", computer)
+          print("")
+          print("It's a draw!")
+          print("")
+          print("")
+          tieGame+=1
+
