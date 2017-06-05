@@ -97,11 +97,49 @@ while True:
           print("")
           print("")
           tieGame+=1
-        if rps == "scissors" and computer == "scissors"
+        if rps == "scissors" and computer == "scissors":
           print("The computer chose", computer)
           print("")
           print("It's a draw!")
           print("")
           print("")
           tieGame+=1
+        #system
+        if rps == "rules":
+          print("**************************************")
+          print("The Rules")
+          print("**************************************")
+          print("Paper beats Rock")
+          print("Rock beats Scissors")
+          print("Scissors beats Paper")
+          print("**************************************")
+        if rps == "display lives":
+          print(live)
+        if rps == "display score":
+          print(score)
+        if rps == "display tie games":
+          print(tieGame)
+        #lives
+        if lives == 0 or rps == "test":
+          print("Thanks for playing")
+          print("You have run out of lives")
+          print("You got",score, "correct")
+          print("There were", tieGame, "Tie Games")
+          stop = input("Press enter key to exit.")
+          import time
+          time.sleep(900)
+        if computer_lives == 0:
+          print("Thanks for playing")
+          print("The computer has run out of lives")
+          print("You win!")
+          print("You got",score, "correct")
+          print("There were", tieGame, "Tie Games")
+          stop = input("Press enter key to exit.")
+          import time
+          time.sleep(900)
+        #exit
+        if rps == "exit":
+          break
+
+
 
