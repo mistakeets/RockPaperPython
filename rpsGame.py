@@ -1,3 +1,4 @@
+import time
 print("Made by Keith Oppel. Visit https://github.com/mistakeets)
 youLose = ("The computer wins")
 win = ("You win")
@@ -5,15 +6,24 @@ lives = 5
 score = 0
 tieGame = 0
 computer_lives = 7
-
+password_list = []
 while True: 
   print("To begin fill in the below information")
   username = input("Please enter your username: ")
   password = input("please enter your password: ")
-  searchfile = open("accounts.csv", "r")
+  searchfile = open("accounts.txt", "r")
   for line in searchfile:
-    if username and password in line: 
+    password_list.append(line.strip())
+    if username and password in password_list:
       print("Access Granted")
+      time.sleep(0.5)
+      print("Loading..")
+      time.sleep(0.5)
+      print("Loading..")
+      time.sleep(0.5)
+      print("Loading..")
+      time.sleep(0.5)
+      print("Acesss Granted")
       print("Rock Paper Scissors")
       print("Rules of the Game")
       print("You Start with", lives, "lives")
@@ -140,6 +150,9 @@ while True:
         #exit
         if rps == "exit":
           break
+    else: 
+      print("Your username or password is incorrect")
+      print("--------------------------------------")
 
 
 
