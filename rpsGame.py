@@ -1,5 +1,5 @@
 import time
-print("Made by Keith Oppel. Visit https://github.com/mistakeets)
+print("Made by Keith Oppel. Visit https://github.com/mistakeets")
 youLose = ("The computer wins")
 win = ("You win")
 lives = 5
@@ -23,37 +23,37 @@ while True:
       time.sleep(0.5)
       print("Loading..")
       time.sleep(0.5)
-      print("Acesss Granted")
-      print("Rock Paper Scissors")
-      print("Rules of the Game")
-      print("You Start with", lives, "lives")
-      print("If you win, you get an extra life")
-      print("If you lose, you lose a life")
-      print("If the round is a draw, your life count stays the same")
-      print("------------------------------------------------------")
-      print("PLEASE DO NOT USE CAPTIAL LETTERS FOR THE COMMANDS")
-      print("------------------------------------------------------")
-      print("To see a list of rules, type rules")
-      print("At any point type exit to leave the game")
-      print("------------------------------------------------------")
-      print("The computer also has lives")
-      print("Can you beat the computer?")
-      print("Good Luck!")
-      print("------------------------------------------------------")
+      start_menu = """
+      Rock Paper Scissors
+      Rules of the Game
+      You Start with 5 lives
+      If you win, you get an extra life
+      If you lose, you lose a life
+      If the round is a draw, your life count stays the same
+      ------------------------------------------------------
+      To see a list of rules, type rules
+      At any point type exit to leave the game
+      ------------------------------------------------------
+      The computer also has lives
+      Can you beat the computer?
+      Good Luck!
+      ------------------------------------------------------
+      """
       while True:
-        rps = input("Rock, Paper, Scissors?")
+        rps = input("Rock, Paper, Scissors?   ")
+        rps = rps.title()
         import random
         computer = ("rock", "paper", "scissors")
         computer = random.choice(computer)
         #rock if statements
-        if rps == "rock" and computer == "paper":
+        if rps == "Rock" and computer == "paper":
           print("The computer chose", computer)
           print("")
           print(youLose)
           print("")
           print("")
           lives-=1 
-        if rps == "rock" and computer == "scissors":
+        if rps == "Rock" and computer == "scissors":
           print("The computer chose", computer)
           print("")
           print(win)
@@ -61,7 +61,7 @@ while True:
           print("")
           score+=1
         #paper if statements
-        if rps == "paper" and computer == "rock":
+        if rps == "Paper" and computer == "rock":
           print("The computer chose", computer)
           print("")
           print(win)
@@ -69,7 +69,7 @@ while True:
           print("")
           print("")
           score+=1
-        if rps == "paper" and computer == "scissors":
+        if rps == "Paper" and computer == "scissors":
           print("The computer chose", computer)
           print("")
           print(youLose)
@@ -77,7 +77,7 @@ while True:
           print("")
           lives-=1
         #scissors if statements
-        if rps == "scissors" and computer == "paper":
+        if rps == "Scissors" and computer == "paper":
           print("The computer chose", computer)
           print("")
           print(win)
@@ -85,7 +85,7 @@ while True:
           print("")
           print("")
           score+=1 
-        if rps == "scissors" and computer == "rock":
+        if rps == "Scissors" and computer == "rock":
           print("The computer chose", computer)
           print("")
           print(youLose)
@@ -93,21 +93,21 @@ while True:
           print("")
           lives-=1
         #duplicates
-        if rps == "rock" and computer == "rock":
+        if rps == "Rock" and computer == "rock":
           print("The computer chose", computer)
           print("")
           print("It's a draw!")
           print("")
           print("")
           tieGame+=1
-        if rps == "paper" and computer == "paper":
+        if rps == "Paper" and computer == "paper":
           print("The computer chose", computer)
           print("")
           print("It's a draw!")
           print("")
           print("")
           tieGame+=1
-        if rps == "scissors" and computer == "scissors":
+        if rps == "Scissors" and computer == "scissors":
           print("The computer chose", computer)
           print("")
           print("It's a draw!")
@@ -136,8 +136,7 @@ while True:
           print("You got",score, "correct")
           print("There were", tieGame, "Tie Games")
           stop = input("Press enter key to exit.")
-          import time
-          time.sleep(900)
+          exit()
         if computer_lives == 0:
           print("Thanks for playing")
           print("The computer has run out of lives")
@@ -145,8 +144,7 @@ while True:
           print("You got",score, "correct")
           print("There were", tieGame, "Tie Games")
           stop = input("Press enter key to exit.")
-          import time
-          time.sleep(900)
+          exit()
         #exit
         if rps == "exit":
           break
